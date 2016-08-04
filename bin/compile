@@ -103,10 +103,10 @@ cp $VENDORED_GRAPHICSMAGICK/bin/* "$BUILD_DIR/public/bin/"
 cp -R $VENDORED_GRAPHICSMAGICK/* $gm_lib_path
 
 echo "Building runtime environment for graphicsmagick" | arrow
-mkdir -p $BUILD_DIR/public/.profile.d
-echo "export PATH=\"\$HOME/bin:\$PATH\"" > $BUILD_DIR/public/.profile.d/graphicsmagick.sh
-echo "export LD_LIBRARY_PATH=\"/app/public/vendor/nasm/lib/:/app/public/vendor/libjpeg-turbo/lib/:/app/public/vendor/zlib/lib/:/app/public/vendor/libpng/lib/:/app/public/vendor/graphicsmagick/lib/:\$LD_LIBRARY_PATH\"" >> $BUILD_DIR/public/.profile.d/graphicsmagick.sh
+mkdir -p $BUILD_DIR/.profile.d
+echo "export PATH=\"\$HOME/bin:\$PATH\"" > $BUILD_DIR/.profile.d/graphicsmagick.sh
+echo "export LD_LIBRARY_PATH=\"/app/public/vendor/nasm/lib/:/app/public/vendor/libjpeg-turbo/lib/:/app/public/vendor/zlib/lib/:/app/public/vendor/libpng/lib/:/app/public/vendor/graphicsmagick/lib/:\$LD_LIBRARY_PATH\"" >> $BUILD_DIR/.profile.d/graphicsmagick.sh
 
 cat <<EOF > export
-export PATH=$BUILD_DIR/public/bin:$PATH
+export PATH=$BUILD_DIR/bin:$PATH
 EOF
